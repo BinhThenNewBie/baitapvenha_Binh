@@ -1,8 +1,22 @@
-int soep(int n, int k) {
-    int ketqua = 0;
+  int soep(int n, int k) {
+    long sum = 0;  
+    int module = (int)Math.pow(10,9) + 7;
     for(int i = 1; i <= n; i++){
-        ketqua += Math.pow(i, k);
+        sum = (sum + power(i, k, module)) % module;  
     }
-    return ketqua;
+    return (int) sum;
 }
-// còn lỗi
+
+// Fast integer exponentiation with modulo
+private long power(int base, int exp, int mod) {
+    long result = 1;
+    long b = base % mod;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            result = (result * b) % mod;
+        }
+        b = (b * b) % mod;
+        exp /= 2;
+    }
+    return result;
+}
