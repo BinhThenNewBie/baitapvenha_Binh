@@ -1,0 +1,8 @@
+int soep(int n, int k) {
+    int ketqua = 0;
+    for(int i = 1; i <= n; i++){
+        ketqua += Math.pow(i, k);
+    }
+    return ketqua;
+}
+// còn lỗi
