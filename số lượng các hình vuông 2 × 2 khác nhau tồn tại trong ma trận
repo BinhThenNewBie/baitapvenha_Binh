@@ -1,0 +1,17 @@
+int differentSquares(int[][] matrix) {
+    int socot = matrix[0].length;
+    int sohang = matrix.length;
+    Set<String> set = new HashSet<>();
+    for(int i = 0; i < sohang - 1 ; i++){
+        for(int j = 0; j < socot - 1; j++){
+            if(matrix.length < 2){
+                return 0;
+            }else if(matrix.length >= 2){
+                String square = matrix[i][j] + "," + matrix[i][j+1] + ";" +
+                                matrix[i+1][j] + "," + matrix[i+1][j+1];
+                set.add(square);
+            }
+        }
+    }
+    return set.size();
+}
