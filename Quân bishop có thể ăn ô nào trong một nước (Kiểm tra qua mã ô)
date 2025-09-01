@@ -1,0 +1,12 @@
+boolean bishopAndPawn(String bishop, String pawn) {
+    int col1 = bishop.charAt(0) - 'A' + 1;
+    int row1 = bishop.charAt(1) - '0'; 
+    int col2 = pawn.charAt(0) - 'A' + 1;
+    int row2 = pawn.charAt(1) - '0'; 
+    if(bishop.equals(pawn)){
+        return false;
+    }
+
+    return(col1 + row1 == col2 + row2 || col1 - row1 == col2 - row2);
+
+}
