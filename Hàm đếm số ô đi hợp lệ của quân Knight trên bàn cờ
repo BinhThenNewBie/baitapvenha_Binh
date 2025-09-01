@@ -1,0 +1,20 @@
+int chessKnight(String Cell) {
+    int[][] moves = {
+        {2,1},{2,-1},{1,2},{1,-2},
+        {-2,1},{-1,2},{-1,-2},{-2,-1}
+    };
+
+    int col = Cell.charAt(0) - 'a';
+    int row = Cell.charAt(1) - '1';
+
+    int count = 0;
+
+    for(int[] move : moves){
+        int newcol = col + move[0];
+        int newrow = row + move[1];
+        if(newcol < 8 && newcol >= 0 && newrow < 8 && newrow >= 0){
+            count++;
+        }
+    }
+    return count;
+}
