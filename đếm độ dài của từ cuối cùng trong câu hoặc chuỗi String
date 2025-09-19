@@ -2,7 +2,7 @@ class Solution {
     public int lengthOfLastWord(String s) {
         int count = 0;
         int i = s.length() - 1;
-        while(i >= 0 && s.charAt(i) == ' '){
+        while(i >= 0 && s.charAt(i) == ' '){ // Bỏ qua các kí tự cách ở cuối chuỗi
             i--;
         }
         while(i >= 0 && s.charAt(i) != ' '){
@@ -12,3 +12,5 @@ class Solution {
         return count;
     }
 }
+
+// phương pháp này sẽ đếm từ cuối của chuỗi, tự bỏ qua các dấu cách ở đầu chuỗi(nếu có).
