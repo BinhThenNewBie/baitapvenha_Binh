@@ -1,0 +1,16 @@
+class Solution {
+    public int[] getSneakyNumbers(int[] nums) {
+        Arrays.sort(nums);
+        List<Integer> sneakyNumberslist = new ArrayList<>();
+        for(int i = 0; i < nums.length - 1; i++){
+            if(nums[i] == nums[i+1]){
+                sneakyNumberslist.add(nums[i]);
+            }
+        }
+        int[] result = new int[sneakyNumberslist.size()];
+        for(int j = 0; j < sneakyNumberslist.size(); j++){
+        result[j] = sneakyNumberslist.get(j);
+        }
+        return result;
+    }
+}
